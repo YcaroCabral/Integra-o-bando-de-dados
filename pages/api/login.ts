@@ -7,10 +7,10 @@ const edpointLogin = (
   res: NextApiResponse<RespostaPadraoMsg>
 ) => {
   if (req.method === 'POST') {
-    const { login, senha } = req.body;
+    const { login, password } = req.body;
 
     if (login === 'admin@admin.com' &&
-      senha === 'admin') {
+      password === 'admin') {
       return res.status(200).json({ msg: ' Usurario autenticado com sucesso' });
     }
     return res.status(400).json({ erro: 'Usuario ou senha não encontrado' });
